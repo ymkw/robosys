@@ -32,12 +32,8 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
                 gpio_base[10] = 1 << 25;
         else if(c == '1'){
                 int i=0;
-                int n;
                 
-                printf("serect repeat 1 to 5")
-                scanf("%d", &n);
-                
-                while(i < n){
+                while(i < 5){
                         
                         int s = jiffies;
                         gpio_base[7] = 1 << 25;
@@ -56,7 +52,7 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
                     digitalwrite(pin,1);
                     delay(INTERVAL);
                 }
-        }
+        
  
 	}
 
